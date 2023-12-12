@@ -9,7 +9,11 @@ $('#btnSave').on('click',function () {
             salary: $('#salary').val()
         },
         success:function (res) {
-
+            if (res.state==='200'){
+                alert("successfully saved !")
+            }else {
+                alert("bad request !")
+            }
         },
         error:function (err) {
 
