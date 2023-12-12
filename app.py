@@ -39,6 +39,16 @@ def delete():
 @app.route('/update', methods=['PUT'])
 def update():
     print("update")
+    id_data = request.form['cusId']
+    name = request.form['name']
+    address = request.form['address']
+    salary = request.form['salary']
+    cur.execute("""
+                  UPDATE customer
+                  SET Name=%s, address=%s,  salary=%s
+                  WHERE customerID=%s
+               """, (name, address, salary, id_data))
+    con.commit()
     return jsonify({'state': "200"})
 
 
