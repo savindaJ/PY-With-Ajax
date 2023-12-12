@@ -1,8 +1,7 @@
 $('#btnSave').on('click',function () {
     $.ajax({
         url:"/test",
-        type:'POST',
-        contentType:"application/json",
+        type:"POST",
         data:{
             cusId: $('#cusId').val(),
             name: $('#name').val(),

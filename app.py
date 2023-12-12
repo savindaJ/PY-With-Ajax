@@ -10,12 +10,15 @@ def index():
 
 @app.route('/test', methods=['POST'])
 def test_post():
-    cusId = request.form['cusId']
-    name = request.form['name']
-    address = request.form['address']
-    salary = request.form['salary']
-    print(cusId, name, address, salary)
-    return '', 200
+    if request.method == 'POST':
+        id = request.form['cusId']
+        name = request.form['name']
+        address = request.form['address']
+        salary = request.form['salary']
+        print(id, name, address, salary)
+        return jsonify({'state': "200"})
+    else:
+        return jsonify({'state': '404'})
 
 
 if __name__ == '__main__':
