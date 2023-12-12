@@ -3,7 +3,12 @@ $('#btnSave').on('click',function () {
         url:"/test",
         type:'POST',
         contentType:"application/json",
-        data:{},
+        data:{
+            cusId: $('#cusId').val(),
+            name: $('#name').val(),
+            address: $('#address').val(),
+            salary: $('#salary').val()
+        },
         success:function (res) {
 
         },
