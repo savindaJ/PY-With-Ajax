@@ -27,6 +27,12 @@ def delete():
     return jsonify({'state': "200"})
 
 
+@app.route('/update', methods=['PUT'])
+def update():
+    print("update")
+    return jsonify({'state': "200"})
+
+
 if __name__ == '__main__':
     app.run(
         host='127.0.0.1', port=5000, debug=True
