@@ -8,9 +8,10 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/test', methods='POST')
+@app.route('/test', methods=['POST'])
 def test_post():
     print(request.form)
+    return '', 200
 
 
 if __name__ == '__main__':
