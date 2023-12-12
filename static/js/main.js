@@ -21,15 +21,12 @@ $('#btnSave').on('click',function () {
     })
 });
 
-$('#btnSave').on('click',function () {
+$('#delete').on('click',function () {
     $.ajax({
-        url:"/test",
-        type:"POST",
+        url:"/delete",
+        type:"DELETE",
         data:{
-            cusId: $('#cusId').val(),
-            name: $('#name').val(),
-            address: $('#address').val(),
-            salary: $('#salary').val()
+            cusId: $('#cusId').val()
         },
         success:function (res) {
             if (res.state==='200'){
@@ -44,10 +41,10 @@ $('#btnSave').on('click',function () {
     })
 });
 
-$('#btnSave').on('click',function () {
+$('#update').on('click',function () {
     $.ajax({
-        url:"/test",
-        type:"POST",
+        url:"/update",
+        type:"PUT",
         data:{
             cusId: $('#cusId').val(),
             name: $('#name').val(),
