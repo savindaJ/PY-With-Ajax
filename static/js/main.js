@@ -30,7 +30,7 @@ $('#delete').on('click',function () {
         },
         success:function (res) {
             if (res.state==='200'){
-                alert("successfully saved !")
+                alert("successfully deleted !")
             }else {
                 alert("bad request !")
             }
@@ -53,7 +53,7 @@ $('#update').on('click',function () {
         },
         success:function (res) {
             if (res.state==='200'){
-                alert("successfully saved !")
+                alert("successfully updated !")
             }else {
                 alert("bad request !")
             }
