@@ -31,6 +31,8 @@ def test_post():
 @app.route('/delete', methods=['DELETE'])
 def delete():
     print("delete")
+    cur.execute("DELETE FROM customer WHERE customerID=%s", request.form['cusId'])
+    con.commit()
     return jsonify({'state': "200"})
 
 
