@@ -10,7 +10,11 @@ def index():
 
 @app.route('/test', methods=['POST'])
 def test_post():
-    print(request.form)
+    cusId = request.form['cusId']
+    name = request.form['name']
+    address = request.form['address']
+    salary = request.form['salary']
+    print(cusId, name, address, salary)
     return '', 200
 
 
