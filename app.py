@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template, request, json, jsonify
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def index():
     return 'Hello World!'
 
 
