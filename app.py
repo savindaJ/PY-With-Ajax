@@ -21,6 +21,12 @@ def test_post():
         return jsonify({'state': '404'})
 
 
+@app.route('/delete', methods=['DELETE'])
+def delete():
+    print("delete")
+    return jsonify({'state': "200"})
+
+
 if __name__ == '__main__':
     app.run(
         host='127.0.0.1', port=5000, debug=True
