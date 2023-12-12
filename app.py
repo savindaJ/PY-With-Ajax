@@ -3,6 +3,9 @@ import pymysql
 
 app = Flask(__name__)
 
+con = pymysql.connect(host='localhost', user='root', password='80221474', charset='utf8', db='thogakade')
+cur = con.cursor()
+
 
 @app.route('/')
 def index():
@@ -17,6 +20,9 @@ def test_post():
         address = request.form['address']
         salary = request.form['salary']
         print(id, name, address, salary)
+        cur.execute("INSERT INTO customer (customerID, Name, address, salary) VALUES (%s, %s, "
+                    "%s, %s)", (id, name, address, salary))
+        con.commit()
         return jsonify({'state': "200"})
     else:
         return jsonify({'state': '404'})
